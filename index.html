@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>NOTAPES — HUMANS.. NOT APES</title>
+  <meta name="description" content="NOTAPES — 666 hand-drawn 48×48 pixel apes. Getgems / TON. HUMANS.. NOT APES." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0c08" />
+  <link rel="canonical" href="https://notapes.art/" />
+  <meta property="og:title" content="NOTAPES — HUMANS.. NOT APES" />
+  <meta property="og:description" content="666 unique pixel apes drawn by hand. TON now. ETH chapter next." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@notapess" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="crt"></div>
+  <div class="wrap">
+    <header class="bar">
+      <pre class="logo" id="logo">┏┅ NOTAPES 🐒
+┗┅ HUMANS.. NOT APES</pre>
+      <div class="bar-right">
+        <button class="lang" data-set="ru">RU</button>
+        <button class="lang" data-set="en">EN</button>
+        <button id="connect" class="ghost" data-i="connect">[ connect wallet ]</button>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <a href="#boot" data-i="t_boot">boot</a>
+      <a href="#apes" data-i="t_apes">apes</a>
+      <a href="#faq" data-i="t_faq">faq</a>
+      <a href="#term" data-i="t_term">terminal</a>
+      <a href="#links" data-i="t_links">links</a>
+    </nav>
+
+    <section id="boot" class="panel">
+      <p class="dim" id="bootline">> system.boot — chapter_one</p>
+      <h1 data-i="h1">666 APES. ZERO GENERATED.</h1>
+      <p class="lead" data-i="lead">
+        Hand-drawn 48×48 pixel portraits by Klassika. Live on TON / Getgems.
+        Next chapter: Ethereum. This page is the public terminal of the collection.
+      </p>
+      <div class="row">
+        <a class="btn" href="https://getgems.io/notapes" target="_blank" rel="noopener" data-i="c_market">open getgems</a>
+        <a class="btn dimbtn" href="https://t.me/notapes" target="_blank" rel="noopener" data-i="c_tg">telegram channel</a>
+      </div>
+      <pre class="box">
+SUPPLY ...... 666
+ART ......... 1 human
+SIZE ........ 48x48
+CHAIN.NOW ... TON
+CHAIN.NEXT .. ETH
+WALLET.DNS .. notapes.ton
+      </pre>
+    </section>
+
+    <section id="apes" class="panel">
+      <h2 data-i="h_apes">// gallery</h2>
+      <p class="dim" data-i="p_apes">Static preview. Real tokens live on Getgems.</p>
+      <div id="gallery" class="grid"></div>
+    </section>
+
+    <section id="faq" class="panel">
+      <h2 data-i="h_faq">// faq</h2>
+      <details open>
+        <summary data-i="q1">What is NOTAPES?</summary>
+        <p data-i="a1">A 666-piece hand-drawn pixel ape collection. Not generated. Each card is a separate drawing with its own lore line.</p>
+      </details>
+      <details>
+        <summary data-i="q2">Where do I buy?</summary>
+        <p data-i="a2">Secondary market: getgems.io/notapes on TON. Ethereum drop is a later chapter, not a copy of all 666.</p>
+      </details>
+      <details>
+        <summary data-i="q3">What does a holder get?</summary>
+        <p data-i="a3">Access to chat, future WL tiers (4 apes = 1 WL, 8+ = OG), character card, and upcoming site mechanics.</p>
+      </details>
+      <details>
+        <summary data-i="q4">What is notapes.ton?</summary>
+        <p data-i="a4">Collection wallet shortname. Send GRAM there. Same name can later open a TON Site. Google still needs a normal https host.</p>
+      </details>
+      <details>
+        <summary data-i="q5">Promo codes?</summary>
+        <p data-i="a5">Field below is a stub. Codes will unlock WL / packs after backend is live.</p>
+      </details>
+    </section>
+
+    <section id="term" class="panel">
+      <h2 data-i="h_term">// helper terminal</h2>
+      <p class="dim" data-i="p_term">UI shell now. Live ape-helper comes later.</p>
+      <div class="term">
+        <div id="log"></div>
+        <form id="termform">
+          <label>ape&gt;</label>
+          <input id="cmd" autocomplete="off" placeholder="help / promo / wallet / lore" />
+        </form>
+      </div>
+      <form id="promoform" class="promo">
+        <label data-i="promo">promo</label>
+        <input id="promo" maxlength="24" placeholder="XXXX-XXXX" />
+        <button type="submit" data-i="apply">apply</button>
+      </form>
+    </section>
+
+    <section id="links" class="panel">
+      <h2 data-i="h_links">// ecosystem</h2>
+      <pre class="box links">
+MARKET   getgems.io/notapes
+CHANNEL  t.me/notapes
+CHAT     t.me/notapeschat
+BOT      t.me/notfunrobot
+X        x.com/notapess
+DNS      notapes.ton
+      </pre>
+    </section>
+
+    <footer>
+      <p>v0.2 draft · edit files, then host · Klassika</p>
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
