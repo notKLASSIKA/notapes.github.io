@@ -160,6 +160,79 @@ const BOARD = [
   { rank: "—", name: "[ BURN ADDRESS 02 ]", apes: 1, wl: "BURNED", rp: 0, burned: true },
 ];
 
+const V4 = {
+  ru: {
+    bootDate: "архив открыт: ноябрь 2023 // первый публичный запуск: 01.01.2024",
+    bootBody: "NOTAPES — исследуемый терминал доступа к экосистеме. Здесь хранятся записи коллекции, процессы автора, сигналы сообщества и следы NOT Artifact.",
+    collectionTitle: "КОЛЛЕКЦИЯ → ЭКОСИСТЕМА",
+    collectionBody: "NFT — только первый слой. Вокруг него собираются Telegram-сервисы, RP, рейтинги, OpenSea Chapter, Dynamic Soul, игра, анимация и физические артефакты.",
+    systemTitle: "СИСТЕМА",
+    systemBody: "Статус холдера формируется не одной цифрой: учитываются время владения, количество обезьян, активность и вклад в экосистему — участие, помощь, комьюнити, инфраструктура, идеи и развитие.",
+    universeTitle: "ВСЕЛЕННАЯ",
+    universeBody: "Угроза галактического масштаба заставляет воинов, демонов, магов и исследователей объединиться. Они ищут древний NOT Artifact. Запись повреждена. Остальное — загадка.",
+    soulTitle: "DYNAMIC SOUL",
+    soulBody: "IN DEVELOPMENT // личность зависит от редкости, атрибутов и истории. Будущие взаимодействия: Telegram, сайт, игра. Состояния: Sleeping / Awakened / Evolving.",
+    soulMemory: "MEMORY RESET PROTOCOL: при продаже личные воспоминания архивируются; репутация, достижения, уровень и история характера сохраняются.",
+    mediaTitle: "MEDIA LAB",
+    creatorTitle: "CREATOR LOG",
+    physicalTitle: "PHYSICAL ARTIFACTS",
+    physicalBody: "10 масляных работ, 144×144 см. Публичный аукцион.",
+    archiveTitle: "ARCHIVE",
+    archiveBody: "Проверенные рынки: GetGems / Harbor / Hotcraft / LAFFKA. Объём коллекции: 6.4k+ GRAM.",
+    communityTitle: "BUILDING CENTER",
+    communityBody: "Ищем людей, которые строят, исследуют, рисуют и помогают экосистеме.",
+    networkTitle: "NETWORK",
+    broadcastTitle: "SYSTEM BROADCAST / NETWORK FEED",
+    recruitment: "NOTAPES BUILDING CENTER // Vibe Coders, Developers, Telegram Developers, Web App, Fullstack, Smart Contract, TON, Pixel Artists, Designers, Community Managers, AI Enthusiasts.",
+    commands: { collection: "КОЛЛЕКЦИЯ", gallery: "ГАЛЕРЕЯ", system: "СИСТЕМА", universe: "ВСЕЛЕННАЯ", soul: "DYNAMIC SOUL", media: "MEDIA LAB", creator: "CREATOR LOG", archive: "АРХИВ", network: "NETWORK" },
+    terms: {
+      OG: { description: "Статус суперхолдера: 8+ обезьян, приоритет легендарных карточек и закрытый лор.", requirements: "8+ apes // holder activity", clearance: "OG" },
+      WL: { description: "Whitelist-доступ к будущей отдельной главе. Уровень зависит от холдинга и вклада.", requirements: "4–7 apes // contribution", clearance: "WL" },
+      RP: { description: "Rating Points — след активности в экосистеме, ботах, комьюнити и проектах.", requirements: "activity // help // ideas", clearance: "RP" },
+      "DYNAMIC SOUL": { description: "Развивающийся характер NFT: Sleeping, Awakened, Evolving.", requirements: "rarity // attributes // history", clearance: "IN DEVELOPMENT" },
+      "NOT ARTIFACT": { description: "Древний объект, который ищут объединённые группы вселенной. Данные неполные.", requirements: "archive fragment required", clearance: "UNKNOWN" },
+      "OPENSEA CHAPTER": { description: "Отдельная hand-drawn серия. Это не Ethereum Chapter и не копия коллекции 666.", requirements: "separate supply // hand-drawn", clearance: "WAIT" },
+      "MEMORY RESET": { description: "При продаже personal memories архивируются. Reputation, achievements, level и character history остаются.", requirements: "transfer event", clearance: "PROTOCOL" },
+      "BUILDING CENTER": { description: "Пространство для людей, которые помогают строить NOTAPES: код, дизайн, TON, комьюнити и идеи.", requirements: "participation // contribution", clearance: "OPEN" },
+    }
+  },
+  en: {
+    bootDate: "archive opened: November 2023 // first public launch: 01.01.2024",
+    bootBody: "NOTAPES is an exploratory access terminal to an ecosystem. It stores collection records, creator processes, community signals and traces of the NOT Artifact.",
+    collectionTitle: "COLLECTION → ECOSYSTEM",
+    collectionBody: "NFT is only the first layer. Around it: Telegram services, RP, ratings, OpenSea Chapter, Dynamic Soul, game, animation and physical artifacts.",
+    systemTitle: "SYSTEM",
+    systemBody: "Holder status is not one number: holding time, ape count, activity and ecosystem contribution all matter — participation, help, community, infrastructure, ideas and development.",
+    universeTitle: "UNIVERSE",
+    universeBody: "A galaxy-scale threat forces warriors, demons, mages and explorers to unite. They search for an ancient NOT Artifact. The record is damaged. The rest is a mystery.",
+    soulTitle: "DYNAMIC SOUL",
+    soulBody: "IN DEVELOPMENT // personality is based on rarity, attributes and history. Future interaction: Telegram, site, game. States: Sleeping / Awakened / Evolving.",
+    soulMemory: "MEMORY RESET PROTOCOL: when sold, personal memories are archived; reputation, achievements, level and character history remain.",
+    mediaTitle: "MEDIA LAB",
+    creatorTitle: "CREATOR LOG",
+    physicalTitle: "PHYSICAL ARTIFACTS",
+    physicalBody: "10 oil works, 144×144 cm. Public auction.",
+    archiveTitle: "ARCHIVE",
+    archiveBody: "Verified markets: GetGems / Harbor / Hotcraft / LAFFKA. Collection volume: 6.4k+ GRAM.",
+    communityTitle: "BUILDING CENTER",
+    communityBody: "People who build, research, draw and help the ecosystem are invited.",
+    networkTitle: "NETWORK",
+    broadcastTitle: "SYSTEM BROADCAST / NETWORK FEED",
+    recruitment: "NOTAPES BUILDING CENTER // Vibe Coders, Developers, Telegram Developers, Web App, Fullstack, Smart Contract, TON, Pixel Artists, Designers, Community Managers, AI Enthusiasts.",
+    commands: { collection: "COLLECTION", gallery: "GALLERY", system: "SYSTEM", universe: "UNIVERSE", soul: "DYNAMIC SOUL", media: "MEDIA LAB", creator: "CREATOR LOG", archive: "ARCHIVE", network: "NETWORK" },
+    terms: {
+      OG: { description: "Super-holder clearance: 8+ apes, legendary priority and closed lore.", requirements: "8+ apes // holder activity", clearance: "OG" },
+      WL: { description: "Whitelist access to a future separate chapter. Level follows holding and contribution.", requirements: "4–7 apes // contribution", clearance: "WL" },
+      RP: { description: "Rating Points — an activity trace across bots, community and ecosystem projects.", requirements: "activity // help // ideas", clearance: "RP" },
+      "DYNAMIC SOUL": { description: "An evolving NFT character: Sleeping, Awakened, Evolving.", requirements: "rarity // attributes // history", clearance: "IN DEVELOPMENT" },
+      "NOT ARTIFACT": { description: "The ancient object sought by the united groups of the universe. Data is incomplete.", requirements: "archive fragment required", clearance: "UNKNOWN" },
+      "OPENSEA CHAPTER": { description: "A separate hand-drawn series. Not Ethereum Chapter and not a clone of the 666 collection.", requirements: "separate supply // hand-drawn", clearance: "WAIT" },
+      "MEMORY RESET": { description: "On sale, personal memories are archived. Reputation, achievements, level and character history remain.", requirements: "transfer event", clearance: "PROTOCOL" },
+      "BUILDING CENTER": { description: "A place for people building NOTAPES: code, design, TON, community and ideas.", requirements: "participation // contribution", clearance: "OPEN" },
+    }
+  }
+};
+
 const state = {
   lang: localStorage.getItem("na-lang") || "ru",
   blood: localStorage.getItem("na-theme") === "blood",
@@ -170,6 +243,8 @@ const state = {
 };
 
 function t() { return COPY[state.lang]; }
+function v4() { return V4[state.lang]; }
+function term(label) { return `<button type="button" class="term-link" data-term="${esc(label)}">${esc(label)}</button>`; }
 function set() { return state.blood ? BLOOD_APES : APES; }
 function pad(n) { return String(n).padStart(4, "0"); }
 function img(file) {
@@ -197,6 +272,14 @@ function render() {
   const navIds = ["#boot", "#apes", "#term", "#leaderboard", "#faq", "#opensea", "#shop", "#eco"];
   const app = document.getElementById("app");
   app.innerHTML = `
+    <aside class="database-panel panel" aria-live="polite" aria-label="NOTAPES database">
+      <div class="database-head"><span>┌─ NOTAPES DATABASE ─┐</span><button class="database-close" data-act="clear-term" type="button" aria-label="Close record">×</button></div>
+      <div class="database-body" id="database-record">
+        <p class="db-status accent">ENTRY: WAITING</p>
+        <p class="xs muted">Hover over an object to display records.</p>
+        <p class="db-status">Status: ONLINE</p>
+      </div>
+    </aside>
     <header>
       <a href="${LINKS.market}" target="_blank" rel="noreferrer" class="btn-fx crt accent">
         <pre class="ascii">┏┅ NOTAPES ⋐[ ◍ _◍ ]っ</pre>
@@ -214,8 +297,11 @@ function render() {
 
     <section id="boot" class="sec is-visible" style="margin-top:1.5rem">
       <pre class="ascii">┏┅ / BOOT /</pre>
+      <p class="v4-boot-mark">666 HAND-DRAWN APES // ${state.lang === "ru" ? "666 ОБЕЗЬЯН, НАРИСОВАННЫХ ВРУЧНУЮ // 291 / 666 ЗАГРУЖЕНО" : "291 / 666 LOADED"}</p>
       <h1 class="glow">${c.h1}</h1>
       <p class="lead">${c.lead}</p>
+      <p class="xs muted">${v4().bootDate}</p>
+      <p class="xs muted boot-record">${v4().bootBody}</p>
       <div class="row" style="margin-top:1rem">
         <a class="ctrl on preview-link" data-preview="GETGEMS // TON MARKET" href="${LINKS.market}" target="_blank" rel="noreferrer">${c.ctaMarket}</a>
         <a class="ctrl" href="${LINKS.telegram}" target="_blank" rel="noreferrer">${c.ctaTg}</a>
@@ -273,6 +359,9 @@ function render() {
       <p class="xs muted">${c.helperNote}</p>
       <p class="xs muted">${c.termHint}</p>
       <div class="panel pad" style="margin-top:12px">
+        <div class="command-strip" aria-label="Terminal navigation">
+          ${Object.entries(v4().commands).map(([key, label]) => `<button class="ctrl command-btn" type="button" data-command="${key}" data-target="#${key === "gallery" ? "apes" : `v4-${key === "soul" ? "soul" : key}`}">[ ${label} ]</button>`).join("")}
+        </div>
         <div class="term" id="logs">${(state.logs.length ? state.logs : ["> " + (state.blood ? c.helperBlood : c.helperBoot)]).map((l) => `<p style="margin:0;white-space:pre-wrap">${esc(l)}</p>`).join("")}</div>
         <form class="term-form" id="cmd-form">
           <label class="prompt" for="cmd">${state.blood ? "demon>" : "ape>"}</label>
@@ -332,6 +421,44 @@ function render() {
       <a class="contract-link preview-link" data-preview="TONVIEWER // VERIFIED CONTRACT" href="https://tonviewer.com/${CONTRACT}" target="_blank" rel="noreferrer">${c.contract}: ${CONTRACT}</a>
       <pre class="ascii" style="margin-top:.75rem">┗┅┅┅/ ${c.footer}</pre>
     </section>
+    <section id="v4-collection" class="sec v4-section">
+      <pre class="ascii">┏┅ / COLLECTION /</pre>
+      <h2 class="v4-title">${v4().collectionTitle}</h2><p class="lead">${v4().collectionBody}</p>
+      <div class="v4-record-grid"><article class="panel pad"><span class="v4-kicker">LAYERS</span><p class="xs muted">NFT · Telegram services · ${term("RP")} · ratings · ${term("OPENSEA CHAPTER")} · ${term("DYNAMIC SOUL")}</p></article><article class="panel pad"><span class="v4-kicker">EXTENSIONS</span><p class="xs muted">game · animation · physical artifacts · archive records</p></article></div>
+    </section>
+    <section id="v4-system" class="sec v4-section">
+      <pre class="ascii">┏┅ / SYSTEM /</pre>
+      <h2 class="v4-title">${v4().systemTitle}</h2><p class="lead">${v4().systemBody}</p>
+      <div class="v4-record-grid"><article class="panel pad"><span class="v4-kicker">CLEARANCE</span><p class="xs muted">${term("OG")} · ${term("WL")} · OTC · ${term("RP")}</p></article><article class="panel pad"><span class="v4-kicker">LEADERBOARDS</span><p class="xs muted">RP LEADERBOARD · HOLDER LEADERBOARD</p></article></div>
+    </section>
+    <section id="v4-universe" class="sec v4-section">
+      <pre class="ascii">┏┅ / UNIVERSE /</pre><h2 class="v4-title">${v4().universeTitle}</h2><p class="lead">${v4().universeBody}</p>
+      <p class="plot">${term("NOT ARTIFACT")} // record fragment: [REDACTED] // clearance unknown</p>
+    </section>
+    <section id="v4-soul" class="sec v4-section">
+      <pre class="ascii">┏┅ / DYNAMIC SOUL /</pre><h2 class="v4-title">${term("DYNAMIC SOUL")}</h2><p class="lead">${v4().soulBody}</p>
+      <div class="panel pad"><p class="xs accent">SLEEPING → AWAKENED → EVOLVING</p><p class="xs muted">${v4().soulMemory}</p><p class="xs muted">${term("MEMORY RESET")}</p></div>
+    </section>
+    <section id="v4-media" class="sec v4-section">
+      <pre class="ascii">┏┅ / MEDIA LAB /</pre><h2 class="v4-title">${v4().mediaTitle}</h2>
+      <div class="v4-chip-grid">${["Animated Stickers","Pixel Animation","Animated Universe","Experimental Animations"].map((x) => `<div class="panel pad xs">${x}</div>`).join("")}</div>
+    </section>
+    <section id="v4-creator" class="sec v4-section">
+      <pre class="ascii">┏┅ / CREATOR LOG /</pre><h2 class="v4-title">${v4().creatorTitle}</h2>
+      <div class="v4-chip-grid">${["Pixel Art Process","Animation Process","VR Experiments","The Sandbox","Physical Art","Behind The Scenes","Development Notes"].map((x) => `<div class="panel pad xs">${x}</div>`).join("")}</div>
+      <p class="xs muted">process / drawing / animation / editing / development / experiments</p>
+    </section>
+    <section id="v4-archive" class="sec v4-section">
+      <pre class="ascii">┏┅ / ARCHIVE /</pre><h2 class="v4-title">${v4().archiveTitle}</h2><p class="lead">${v4().archiveBody}</p>
+      <div class="panel pad"><p class="xs accent">ACHIEVEMENTS</p><p class="xs muted">verified markets · collection volume · holder records · creator records</p></div>
+    </section>
+    <section id="v4-network" class="sec v4-section">
+      <pre class="ascii">┏┅ / NETWORK /</pre><h2 class="v4-title">${v4().networkTitle}</h2>
+      <ul class="network-list">${["GetGems","Telegram Channel / Chat","NOTFUNROBOT","Holder Chat","Tribe","OpenSea","Discord","X","Sticker Pack","DNS"].map((x) => `<li><span>${x}</span><span class="muted">${x === "Discord" ? "RECONSTRUCTION IN PROGRESS" : "ONLINE"}</span></li>`).join("")}</ul>
+    </section>
+    <section id="v4-physical" class="sec v4-section"><pre class="ascii">┏┅ / PHYSICAL ARTIFACTS /</pre><h2 class="v4-title">${v4().physicalTitle}</h2><p class="lead">${v4().physicalBody}</p></section>
+    <section id="v4-community" class="sec v4-section"><pre class="ascii">┏┅ / COMMUNITY /</pre><h2 class="v4-title">${v4().communityTitle}</h2><p class="lead">${v4().communityBody}</p><div class="panel pad"><p class="xs accent">${v4().recruitment}</p></div></section>
+    <section id="v4-feed" class="sec v4-section"><pre class="ascii">┏┅ / ${v4().broadcastTitle} /</pre><div class="feed panel pad"><p class="xs"><span class="accent">[ONLINE]</span> archive records available</p><p class="xs"><span class="accent">[SIGNAL]</span> building center listening</p><p class="xs"><span class="accent">[STATUS]</span> OpenSea Chapter: WAIT</p></div></section>
     ${state.card != null ? cardModal(state.card) : ""}
   `;
 
@@ -437,6 +564,48 @@ function bind() {
     render();
   });
   const preview = document.querySelector(".cursor-preview") || document.body.appendChild(Object.assign(document.createElement("div"), { className: "cursor-preview" }));
+  const database = document.getElementById("database-record");
+  let recordTimer;
+  const showRecord = (label) => {
+    const record = v4().terms[label];
+    if (!record || !database) return;
+    window.clearTimeout(recordTimer);
+    database.innerHTML = `<p class="db-status accent">ENTRY: ${esc(label)}</p><p class="xs muted record-loading">loading data...</p>`;
+    recordTimer = window.setTimeout(() => {
+      database.innerHTML = `<p class="db-status accent">ENTRY: ${esc(label)}</p><p class="xs muted">STATUS: ${esc(record.clearance)}</p><p class="xs">${esc(record.description)}</p><p class="xs muted">REQUIREMENTS: ${esc(record.requirements)}</p><button class="ctrl database-reset" data-act="clear-term" type="button">RETURN TO WAITING</button>`;
+      database.querySelector("[data-act='clear-term']").addEventListener("click", clearRecord);
+    }, 500);
+  };
+  function clearRecord() {
+    window.clearTimeout(recordTimer);
+    if (database) database.innerHTML = `<p class="db-status accent">ENTRY: WAITING</p><p class="xs muted">Hover over an object to display records.</p><p class="db-status">Status: ONLINE</p>`;
+  }
+  document.querySelectorAll("[data-term]").forEach((el) => {
+    el.addEventListener("pointerenter", () => showRecord(el.dataset.term));
+    el.addEventListener("focus", () => showRecord(el.dataset.term));
+    el.addEventListener("click", (event) => {
+      event.preventDefault();
+      showRecord(el.dataset.term);
+    });
+  });
+  document.querySelectorAll("[data-act='clear-term']").forEach((el) => el.addEventListener("click", clearRecord));
+  document.querySelectorAll("[data-command]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.querySelector(button.dataset.target);
+      const label = button.textContent.replace(/[\[\]]/g, "").trim();
+      pushLog(`> ${label}`);
+      pushLog("loading data... opening archive... displaying records...");
+      const logs = document.getElementById("logs");
+      if (logs) logs.innerHTML += `<p style="margin:0;white-space:pre-wrap">${esc("> " + label)}</p><p style="margin:0;white-space:pre-wrap">${esc("loading data... opening archive... displaying records...")}</p>`;
+      window.setTimeout(() => {
+        if (target) {
+          target.classList.add("command-focus");
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.setTimeout(() => target.classList.remove("command-focus"), 1400);
+        }
+      }, 500);
+    });
+  });
   const positionPreview = (event) => {
     const gap = 14;
     const rect = preview.getBoundingClientRect();
