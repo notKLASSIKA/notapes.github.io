@@ -258,6 +258,58 @@ function fallback(el, file) {
   };
 }
 
+function applyNavState() {
+  const sections = [...document.querySelectorAll(".sec")];
+  const links = [...document.querySelectorAll(".nav-link")];
+  const activeIds = sections.filter((section) => {
+    const rect = section.getBoundingClientRect();
+    return rect.top <= window.innerHeight * 0.42 && rect.bottom >= window.innerHeight * 0.25;
+  }).map((section) => `#${section.id}`);
+
+  const currentId = activeIds[0] || "#boot";
+  links.forEach((link) => {
+    const isActive = link.dataset.section === currentId;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+function attachSectionTrails() {
+  const sections = [...document.querySelectorAll(".sec")];
+  sections.forEach((section) => {
+    if (!section.querySelector(".section-trail")) {
+      const id = section.id || "section";
+      const labelMap = {
+        boot: ["START"],
+        apes: ["START", "GALLERY"],
+        lore: ["START", "UNIVERSE"],
+        faq: ["START", "DOCS"],
+        term: ["START", "TERMINAL"],
+        leaderboard: ["START", "RANKING"],
+        opensea: ["START", "OPENSEA"],
+        hold: ["START", "HOLDERS"],
+        shop: ["START", "SHOP"],
+        eco: ["START", "ECOSYSTEM"],
+        "v4-collection": ["START", "COLLECTION"],
+        "v4-system": ["START", "SYSTEM"],
+        "v4-universe": ["START", "UNIVERSE"],
+        "v4-soul": ["START", "DYNAMIC SOUL"],
+        "v4-media": ["START", "MEDIA LAB"],
+        "v4-creator": ["START", "CREATOR LOG"],
+        "v4-archive": ["START", "ARCHIVE"],
+        "v4-network": ["START", "NETWORK"],
+        "v4-physical": ["START", "PHYSICAL ARTIFACTS"],
+        "v4-community": ["START", "COMMUNITY"],
+        "v4-feed": ["START", "SIGNALS"],
+      };
+      const labels = labelMap[id] || ["START"];
+      const trail = labels.map((label, index) => `${index === 0 ? "┗┅┅┅" : "›"} ${label}`).join(" ");
+      section.insertAdjacentHTML("beforeend", `<div class="section-trail" aria-label="Section trail"><span>${trail}</span></div>`);
+    }
+  });
+}
+
 function render() {
   const appEl = document.getElementById("app");
   if (!appEl) return;
@@ -293,7 +345,8 @@ function render() {
         <button class="ctrl pixel ${state.connected ? "on" : ""}" data-act="wallet">${state.connected ? c.connected : c.connect}</button>
       </div>
     </header>
-    <nav class="nav">${c.nav.map((label, i) => `${i ? '<span class="sep">|</span>' : ""}<a href="${navIds[i]}">${label}</a>`).join("")}</nav>
+    <nav class="nav" aria-label="Terminal navigation">${c.nav.map((label, i) => `${i ? '<span class="sep">|</span>' : ""}<a class="nav-link" data-section="${navIds[i]}" href="${navIds[i]}">${label}</a>`).join("")}</nav>
+    <div class="mobile-dock" aria-label="Fast terminal navigation">${["#boot", "#apes", "#term", "#leaderboard", "#eco"].map((id) => `<a href="${id}" data-section="${id}" class="nav-link">${id === "#boot" ? "HOME" : id === "#apes" ? "GALLERY" : id === "#term" ? "TERM" : id === "#leaderboard" ? "RANK" : "NET"}</a>`).join("")}</div>
 
     <section id="boot" class="sec is-visible" style="margin-top:1.5rem">
       <pre class="ascii">┏┅ / BOOT /</pre>
@@ -641,13 +694,22 @@ function bind() {
       });
     }, { passive: true });
   }
+  attachSectionTrails();
+  applyNavState();
+  if (!document.body.dataset.navBound) {
+    document.body.dataset.navBound = "1";
+    document.addEventListener("scroll", applyNavState, { passive: true });
+  }
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    }), { threshold: 0.12 });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+      applyNavState();
+    }, { threshold: 0.12 });
     document.querySelectorAll(".sec:not(.is-visible)").forEach((section) => observer.observe(section));
   } else {
     document.querySelectorAll(".sec").forEach((section) => section.classList.add("is-visible"));
